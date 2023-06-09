@@ -1,4 +1,5 @@
 import "./App.css";
+import { populateUser, showTotalReviews } from "./utils";
 
 const reviews: {
   name: string;
@@ -26,30 +27,73 @@ const reviews: {
   },
 ];
 
-const showTotalReviews = (
-  value: number,
-  reviewer: string,
-  date: string,
-  loyalty: boolean
-) => {
-  const totalReviews = value.toString();
-  const lastReviewer = reviewer;
-  const lastReviewedDate = date;
-  const isLoyalUser = loyalty ? "⭐" : "";
-  return `total reviews: ${totalReviews} and last reviewed by: ${lastReviewer} ${isLoyalUser} on ${lastReviewedDate}`;
-};
-
-const you = {
-  userName: { firstName: "Bobby", lastName: "Brown" },
+const you: {
+  firstName: string;
+  lastName: string;
+  isReturning: boolean;
+  age: number;
+  stayedAt: string[];
+} = {
+  firstName: "Bobby",
+  lastName: "Brown",
   isReturning: true,
+  age: 25,
+  stayedAt: ["Florida", "Cuba", "Texas"],
 };
 
-function populateUser(isReturning: boolean, userName: string) {
-  if (isReturning) {
-    return "back" + userName;
-  }
-  return userName;
-}
+const properties: {
+  image: string;
+  title: string;
+  price: number;
+  location: {
+    firstLine: string;
+    city: string;
+    code: number;
+    country: string;
+  };
+  contact: string;
+  isAvailable: boolean;
+}[] = [
+  {
+    image: "",
+    title: "Colombian Shack",
+    price: 45,
+    location: {
+      firstLine: "shack 37",
+      city: "Bogota",
+      code: 45632,
+      country: "Colombia",
+    },
+    contact: "marywinkle@gmail.com",
+    isAvailable: true,
+  },
+  {
+    image: "",
+    title: "Polish Cottage",
+    price: 34,
+    location: {
+      firstLine: "no 23",
+      city: "Gdansk",
+      code: 343903,
+      country: "Poland",
+    },
+    contact: "garydavis@hotmail.com",
+    isAvailable: false,
+  },
+  {
+    image: "",
+    title: "London Flat",
+    price: 23,
+    location: {
+      firstLine: "flat 15",
+      city: "London",
+      code: 35433,
+      country: "United Kingdom",
+    },
+    contact: "andyluger@aol.com",
+    isAvailable: true,
+  },
+];
 
 function App() {
   return (
@@ -58,9 +102,7 @@ function App() {
         <div className="logo"></div>
         <h3 className="user-container">
           Welcome
-          <span id="user">
-            {populateUser(you.isReturning, you.userName.firstName)}
-          </span>
+          <span id="user">{populateUser(you.isReturning, you.firstName)}</span>
         </h3>
       </div>
       <div className="container">
