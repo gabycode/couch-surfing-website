@@ -62,7 +62,7 @@ const properties: {
     title: "Colombian Shack",
     price: 45,
     location: {
-      firstLine: "shack 37",
+      firstLine: "shack 38",
       city: "Bogota",
       code: 45632,
       country: "Colombia",
@@ -75,7 +75,7 @@ const properties: {
     title: "Polish Cottage",
     price: 34,
     location: {
-      firstLine: "no 23",
+      firstLine: "no. 23",
       city: "Gdansk",
       code: 343903,
       country: "Poland",
