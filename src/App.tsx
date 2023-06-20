@@ -1,28 +1,29 @@
 import "./App.css";
 import { populateUser, showTotalReviews } from "./utils";
+import { Permission, LoyaltyUser } from "./enums";
 
 const reviews: {
   name: string;
   stars: number;
-  loyaltyUser: boolean;
+  loyaltyUser: LoyaltyUser;
   date: string;
 }[] = [
   {
     name: "Sheia",
     stars: 5,
-    loyaltyUser: true,
+    loyaltyUser: LoyaltyUser.GOLD_USER,
     date: "01-04-2021",
   },
   {
     name: "Andrzej",
     stars: 3,
-    loyaltyUser: false,
+    loyaltyUser: LoyaltyUser.BRONZE_USER,
     date: "28-03-2021",
   },
   {
     name: "Omar",
     stars: 4,
-    loyaltyUser: true,
+    loyaltyUser: LoyaltyUser.SILVER_USER,
     date: "27-03-2021",
   },
 ];
@@ -31,12 +32,14 @@ const you: {
   firstName: string;
   lastName: string;
   isReturning: boolean;
+  permissions: Permission.ADMIN;
   age: number;
   stayedAt: string[];
 } = {
   firstName: "Bobby",
   lastName: "Brown",
   isReturning: true,
+  permissions: Permission.ADMIN,
   age: 25,
   stayedAt: ["Florida", "Cuba", "Texas"],
 };
@@ -95,6 +98,8 @@ const properties: {
   },
 ];
 
+const currentLocation: [string, string, number] = ["Hawaii", "11:36", 26];
+
 function App() {
   return (
     <>
@@ -122,6 +127,9 @@ function App() {
               <img src={property.image} />
             </div>
           ))}
+        </div>
+        <div className="footer">
+          {currentLocation[0]}, {currentLocation[1]} am, {currentLocation[2]}°C
         </div>
       </div>
     </>
