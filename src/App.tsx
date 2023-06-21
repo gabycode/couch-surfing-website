@@ -58,7 +58,7 @@ const properties: {
   isAvailable: boolean;
 }[] = [
   {
-    image: "public/imgs/colombia-property.jpg",
+    image: "/imgs/colombia-property.jpg",
     title: "Colombian Shack",
     price: 45,
     location: {
@@ -71,7 +71,7 @@ const properties: {
     isAvailable: true,
   },
   {
-    image: "public/imgs/poland-property.jpg",
+    image: "/imgs/poland-property.jpg",
     title: "Polish Cottage",
     price: 34,
     location: {
@@ -84,7 +84,7 @@ const properties: {
     isAvailable: false,
   },
   {
-    image: "public/imgs/london-property.jpg",
+    image: "/imgs/london-property.jpg",
     title: "London Flat",
     price: 23,
     location: {
