@@ -1,6 +1,7 @@
 import "./App.css";
 import { populateUser, showTotalReviews } from "./utils";
 import { Permission, LoyaltyUser } from "./enums";
+import { Country, Price } from "./types";
 
 const reviews: {
   name: string;
@@ -47,12 +48,12 @@ const you: {
 const properties: {
   image: string;
   title: string;
-  price: number;
+  price: Price;
   location: {
     firstLine: string;
     city: string;
     code: number;
-    country: string;
+    country: Country;
   };
   contact: [number, string];
   isAvailable: boolean;
@@ -100,6 +101,14 @@ const properties: {
 
 const currentLocation: [string, string, number] = ["Hawaii", "11:36", 26];
 
+let isLoggedIn = true;
+
+function showDetails(authorityStatus: boolean | Permissions, price: number) {
+  if (authorityStatus) {
+    return `$${price}/night`;
+  }
+}
+
 function App() {
   return (
     <>
@@ -112,7 +121,6 @@ function App() {
       </div>
       <div className="container">
         <h5 id="reviews">
-          total reviews:{" "}
           {showTotalReviews(
             reviews.length,
             reviews[0].name,
@@ -124,7 +132,9 @@ function App() {
           {properties.map((property, index) => (
             <div className="card" key={index}>
               {property.title}
+
               <img src={property.image} />
+              <div>{showDetails(isLoggedIn, property.price)}</div>
             </div>
           ))}
         </div>
