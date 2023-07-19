@@ -10,7 +10,9 @@ export const showTotalReviews = (
   const lastReviewer = reviewer;
   const lastReviewedDate = date;
   const isLoyalUser = loyalty === LoyaltyUser.GOLD_USER ? "⭐" : "";
-  return `total reviews: ${totalReviews} and last reviewed by: ${lastReviewer} ${isLoyalUser} on ${lastReviewedDate}`;
+  return `${totalReviews} review${makeMultiple(
+    value
+  )} and last reviewed by: ${lastReviewer} ${isLoyalUser} on ${lastReviewedDate}`;
 };
 
 export function populateUser(isReturning: boolean, userName: string) {
@@ -18,4 +20,10 @@ export function populateUser(isReturning: boolean, userName: string) {
     return " back " + userName;
   }
   return userName;
+}
+
+function makeMultiple(value: number): string {
+  if (value > 1 || value === 0) {
+    return "s";
+  } else return "";
 }
