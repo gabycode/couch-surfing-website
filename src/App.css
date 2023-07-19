@@ -35,7 +35,7 @@ body {
   width: 100%;
   background-size: 47px;
   background-repeat: no-repeat;
-  background-image: url("public/sofa.svg");
+  background-image: url("/sofa.svg");
   margin: 20px;
 }
 
