@@ -1,7 +1,15 @@
 import "./App.css";
-import { populateUser, showTotalReviews } from "./utils";
+import { getTopTwoReviews, populateUser, showTotalReviews } from "./utils";
 import { Permission, LoyaltyUser } from "./enums";
 import { Country, Price } from "./types";
+import { useState } from "react";
+
+interface Review {
+  name: string;
+  stars: number;
+  loyaltyUser: LoyaltyUser;
+  date: string;
+}
 
 const reviews: {
   name: string;
@@ -110,6 +118,18 @@ function showDetails(authorityStatus: boolean | Permissions, price: number) {
 }
 
 function App() {
+  const [displayedReviews, setDisplayedReviews] = useState<Review[]>([]);
+  function addReviews(
+    array: {
+      name: string;
+      stars: number;
+      loyaltyUser: LoyaltyUser;
+      date: string;
+    }[]
+  ): void {
+    const topTwo = getTopTwoReviews(array);
+    setDisplayedReviews(topTwo);
+  }
   return (
     <>
       <div className="nav-bar">
@@ -128,6 +148,22 @@ function App() {
             reviews[0].loyaltyUser
           )}
         </h5>
+        {displayedReviews.length === 0 && (
+          <button
+            className="reviews-button"
+            onClick={() => addReviews(reviews)}>
+            Get reviews
+          </button>
+        )}
+        <div className="reviews-container">
+          {displayedReviews.map((review, index) => (
+            <div key={index}>
+              <h5>
+                {review.stars} stars from {review.name}
+              </h5>
+            </div>
+          ))}
+        </div>
         <div className="properties">
           {properties.map((property, index) => (
             <div className="card" key={index}>
