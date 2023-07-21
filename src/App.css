@@ -44,6 +44,18 @@ body {
   white-space: nowrap;
 }
 
+.reviews-button {
+  margin: 10px;
+}
+
+.reviews-container {
+  display: flex;
+  padding: 10px;
+}
+
+.reviews-container h5 {
+  padding: 10px;
+}
 .properties {
   display: flex;
   flex-wrap: wrap;
