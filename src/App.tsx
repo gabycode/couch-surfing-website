@@ -106,6 +106,17 @@ function showDetails(authorityStatus: boolean | Permissions, price: number) {
   }
 }
 
+class MainProperty {
+  reviews: Review[];
+  src: string;
+  title: string;
+  constructor(reviews: Review[], src: string, title: string) {
+    this.reviews = reviews;
+    this.src = src;
+    this.title = title;
+  }
+}
+
 function App() {
   const [displayedReviews, setDisplayedReviews] = useState<Review[]>([]);
   function addReviews(array: Review[]): void {
