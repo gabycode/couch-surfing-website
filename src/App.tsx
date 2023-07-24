@@ -3,20 +3,9 @@ import { getTopTwoReviews, populateUser, showTotalReviews } from "./utils";
 import { Permission, LoyaltyUser } from "./enums";
 import { Country, Price } from "./types";
 import { useState } from "react";
+import { Review } from "./interfaces";
 
-interface Review {
-  name: string;
-  stars: number;
-  loyaltyUser: LoyaltyUser;
-  date: string;
-}
-
-const reviews: {
-  name: string;
-  stars: number;
-  loyaltyUser: LoyaltyUser;
-  date: string;
-}[] = [
+const reviews: Review[] = [
   {
     name: "Sheia",
     stars: 5,
@@ -119,14 +108,7 @@ function showDetails(authorityStatus: boolean | Permissions, price: number) {
 
 function App() {
   const [displayedReviews, setDisplayedReviews] = useState<Review[]>([]);
-  function addReviews(
-    array: {
-      name: string;
-      stars: number;
-      loyaltyUser: LoyaltyUser;
-      date: string;
-    }[]
-  ): void {
+  function addReviews(array: Review[]): void {
     const topTwo = getTopTwoReviews(array);
     setDisplayedReviews(topTwo);
   }
