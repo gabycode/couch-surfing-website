@@ -3,7 +3,7 @@ import { getTopTwoReviews, populateUser, showTotalReviews } from "./utils";
 import { Permission, LoyaltyUser } from "./enums";
 import { Country, Price } from "./types";
 import { useState } from "react";
-import { Review } from "./interfaces";
+import Properties, { Review } from "./interfaces";
 
 const reviews: Review[] = [
   {
@@ -42,19 +42,7 @@ const you: {
   stayedAt: ["Florida", "Cuba", "Texas"],
 };
 
-const properties: {
-  image: string;
-  title: string;
-  price: Price;
-  location: {
-    firstLine: string;
-    city: string;
-    code: number;
-    country: Country;
-  };
-  contact: [number, string];
-  isAvailable: boolean;
-}[] = [
+const properties: Properties[] = [
   {
     image: "/imgs/colombia-property.jpg",
     title: "Colombian Shack",
