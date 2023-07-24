@@ -1,7 +1,6 @@
 import "./App.css";
 import { getTopTwoReviews, populateUser, showTotalReviews } from "./utils";
 import { Permission, LoyaltyUser } from "./enums";
-import { Country, Price } from "./types";
 import { useState } from "react";
 import Properties, { Review } from "./interfaces";
 
@@ -107,6 +106,20 @@ class MainProperty {
 
 function App() {
   const [displayedReviews, setDisplayedReviews] = useState<Review[]>([]);
+
+  const mainProperty = new MainProperty(
+    [
+      {
+        name: "Olive",
+        stars: 5,
+        loyaltyUser: LoyaltyUser.GOLD_USER,
+        date: "12-04-2021",
+      },
+    ],
+    "/imgs/italian-property.jpg",
+    "Italian House"
+  );
+
   function addReviews(array: Review[]): void {
     const topTwo = getTopTwoReviews(array);
     setDisplayedReviews(topTwo);
@@ -121,6 +134,7 @@ function App() {
         </h3>
       </div>
       <div className="container">
+        <img src={mainProperty.src} alt={mainProperty.title} />
         <h5 id="reviews">
           {showTotalReviews(
             reviews.length,
