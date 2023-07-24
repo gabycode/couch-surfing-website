@@ -1,4 +1,5 @@
 import { LoyaltyUser } from "./enums";
+import { Country, Price } from "./types";
 
 export interface Review {
   name: string;
@@ -10,12 +11,12 @@ export interface Review {
 export default interface Properties {
   image: string;
   title: string;
-  price: number;
+  price: Price;
   location: {
     firstLine: string;
     city: string;
     code: number;
-    country: string;
+    country: Country;
   };
   contact: [number, string];
   isAvailable: boolean;
