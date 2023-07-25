@@ -172,6 +172,7 @@ function App() {
             </div>
           ))}
         </div>
+        <div className="break"></div>
         <div className="properties">
           {properties.map((property, index) => (
             <div className="card" key={index}>
