@@ -60,6 +60,13 @@ body {
 .reviews-container h5 {
   padding: 10px;
 }
+
+.break {
+  height: 1px;
+  width: 90%;
+  background-color: rgb(255, 127, 80);
+}
+
 .properties {
   display: flex;
   flex-wrap: wrap;
