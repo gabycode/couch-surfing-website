@@ -81,6 +81,19 @@ const properties: Properties[] = [
     contact: [+34829374892553, "andyluger@aol.com"],
     isAvailable: true,
   },
+  {
+    image: "/imgs/malia-hotel.jpg",
+    title: "Malia Hotel",
+    price: 35,
+    location: {
+      firstLine: "Room 4",
+      city: "Malia",
+      code: 45334,
+      country: "Malaysia",
+    },
+    contact: [+60349822083, "lee34@gmail.com"],
+    isAvailable: false,
+  },
 ];
 
 const currentLocation: [string, string, number] = ["Hawaii", "11:36", 26];
@@ -169,9 +182,9 @@ function App() {
             </div>
           ))}
         </div>
-        <div className="footer">
-          {currentLocation[0]}, {currentLocation[1]} am, {currentLocation[2]}°C
-        </div>
+      </div>
+      <div className="footer">
+        {currentLocation[0]}, {currentLocation[1]} am, {currentLocation[2]}°C
       </div>
     </>
   );
