@@ -25,6 +25,10 @@ body {
   width: 100%;
 }
 
+.container h5 {
+  padding: 20px;
+}
+
 .nav-bar {
   width: 100%;
   position: sticky;
@@ -50,6 +54,17 @@ body {
 
 .reviews-button {
   margin: 10px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #f08080;
+  border-radius: 5px;
+  color: white;
+  transition: 0.3s;
+}
+
+.reviews-button:hover {
+  background-color: #e36363;
 }
 
 .reviews-container {
