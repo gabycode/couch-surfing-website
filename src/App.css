@@ -21,10 +21,6 @@ body {
   align-items: center;
 }
 
-.container img {
-  width: 100%;
-}
-
 .container h5 {
   padding: 20px;
 }
@@ -50,6 +46,10 @@ body {
 .user-container {
   margin: 20px;
   white-space: nowrap;
+}
+
+.main-property-img {
+  width: 100%;
 }
 
 .reviews-button {
