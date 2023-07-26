@@ -3,6 +3,7 @@ import { getTopTwoReviews, populateUser, showTotalReviews } from "./utils";
 import { Permission, LoyaltyUser } from "./enums";
 import { useState } from "react";
 import Properties, { Review } from "./interfaces";
+import MainProperty from "./classes";
 
 const reviews: Review[] = [
   {
@@ -103,17 +104,6 @@ let isLoggedIn = true;
 function showDetails(authorityStatus: boolean | Permissions, price: number) {
   if (authorityStatus) {
     return `$${price}/night`;
-  }
-}
-
-class MainProperty {
-  reviews: Review[];
-  src: string;
-  title: string;
-  constructor(reviews: Review[], src: string, title: string) {
-    this.reviews = reviews;
-    this.src = src;
-    this.title = title;
   }
 }
 
