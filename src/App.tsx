@@ -147,7 +147,11 @@ function App() {
         </h3>
       </div>
       <div className="container">
-        <img src={mainProperty.src} alt={mainProperty.title} />
+        <img
+          src={mainProperty.src}
+          alt={mainProperty.title}
+          className="main-property-img"
+        />
         <h5 id="reviews">
           {showTotalReviews(
             reviews.length,
