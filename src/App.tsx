@@ -119,7 +119,7 @@ function App() {
         date: "12-04-2021",
       },
     ],
-    "/imgs/italian-property.jpg",
+    "./imgs/italian-property.jpg",
     "Italian House"
   );
 
